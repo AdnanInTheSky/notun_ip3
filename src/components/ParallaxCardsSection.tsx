@@ -225,8 +225,8 @@ const ParallaxCard: React.FC<ParallaxCardProps> = ({ card, settings, onShowDetai
     <div
       className="relative group flex items-center justify-center shrink-0"
       style={{
-        width: `calc(20rem * ${scale} + 1rem)`,
-        height: `calc(28rem * ${scale} + 2rem)`,
+        width: `calc(20rem * ${scale})`,
+        height: `calc(28rem * ${scale})`,
       }}
     >
       <div
@@ -512,13 +512,13 @@ export const ParallaxCardsSection: React.FC<ParallaxCardsSectionProps> = ({ embe
       ) : (
         <div className="space-y-5">
           <div className={`${embedded ? 'bg-[#050a12]/60' : 'bg-[#081220]/90'} border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-inner overflow-hidden`}>
-            {/* 4 Bigger Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center items-center py-2 px-1">
+            {/* 3D Cards Grid with Reduced Gap */}
+            <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-3.5 py-2 px-1">
               {displayedCards.map((card, index) => (
                 <div
                   key={card.id || index}
                   style={{ zIndex: index + 1 }}
-                  className="transition-all duration-300 hover:scale-[1.04] hover:!z-50 shrink-0 cursor-pointer w-full flex justify-center"
+                  className="transition-all duration-300 hover:scale-[1.04] hover:!z-50 shrink-0 cursor-pointer flex justify-center"
                 >
                   <ParallaxCard
                     card={card}
